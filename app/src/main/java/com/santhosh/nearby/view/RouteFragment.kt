@@ -24,6 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.gson.Gson
 import com.santhosh.nearby.Directions
+import com.santhosh.nearby.MainActivity
 import com.santhosh.nearby.R
 import com.santhosh.nearby.ui.main.model.PlacesViewModel
 import com.santhosh.nearby.ui.main.model.database.PlaceData
@@ -92,7 +93,7 @@ class RouteFragment : Fragment(), OnMapReadyCallback {
                     }
                 }
             }
-            val url = "https://maps.googleapis.com/maps/api/directions/json?$origin&$destination&$waypoint&key=AIzaSyAf0u_wOwyhRpDBXSkiLv85qusXVCgWG3I"
+            val url = "https://maps.googleapis.com/maps/api/directions/json?$origin&$destination&$waypoint&key=${MainActivity.API_KEY}"
             val request = Request.Builder().url(url).build()
             val okHttpClient = OkHttpClient()
             okHttpClient.newCall(request).enqueue(object : Callback {

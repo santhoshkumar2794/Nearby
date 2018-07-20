@@ -27,6 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.gson.Gson
 import com.santhosh.nearby.Directions
+import com.santhosh.nearby.MainActivity
 import com.santhosh.nearby.R
 import com.santhosh.nearby.ui.main.utils.Util
 import com.santhosh.nearby.ui.main.utils.Nearby
@@ -105,7 +106,7 @@ class NearbyFragment : Fragment(), OnMapReadyCallback {
         val endPoint = nearbyLocation.placeB
         if (startPoint != null && endPoint != null) {
 
-            val url = "https://maps.googleapis.com/maps/api/directions/json?origin=place_id:${startPoint!!.id}&destination=place_id:${endPoint!!.id}&key=AIzaSyAf0u_wOwyhRpDBXSkiLv85qusXVCgWG3I"
+            val url = "https://maps.googleapis.com/maps/api/directions/json?origin=place_id:${startPoint!!.id}&destination=place_id:${endPoint!!.id}&key=${MainActivity.API_KEY}"
             val request = Request.Builder().url(url).build()
             val okHttpClient = OkHttpClient()
             okHttpClient.newCall(request).enqueue(object : Callback {
