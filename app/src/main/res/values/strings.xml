@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Nearby</string>
+    <string name="search_places">Search Places</string>
+    <string name="delete_places">Delete few places to add more</string>
+    <string name="nearby_count_check_message">Need atleast two places to show nearby places</string>
+    <string name="route_count_check_message">Need atleast two places to show route</string>
+</resources>
